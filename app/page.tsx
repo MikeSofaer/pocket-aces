@@ -82,7 +82,7 @@ export default function App() {
             </a>
           </div>
           <p className="text-center mb-6">
-            Get started by editing
+            Can you change anything by editing
             <code className="p-1 ml-1 rounded dark:bg-gray-800 bg-gray-200">
               app/page.tsx
             </code>
