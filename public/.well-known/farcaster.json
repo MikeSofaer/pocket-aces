@@ -1,0 +1,21 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjM3OTc4MywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDE5RjA5OGRFZDg1MjYzQzIzRGYyNjgwMkM4YTFFQmEyYzc5QTg1NzkifQ",
+    "payload": "eyJkb21haW4iOiJsb2NhbGhvc3QifQ",
+    "signature": "MHhjY2I2OTE0MmRlMDY1OGZhNWE0ZjBkZTVjYTYwOWE0NGJkOWQyYTFmZjYwMjY1NjY2YzM1MjhhMjFjOThkMzAyNDQ5ZDZiMzIwMzFjOGM2NWZmM2JiYjFjNDdhNmU0MDRhZTUzOGVmMTllZjk1NTgxYzdhYWZmYzhjNzcyZDc3YTFi"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Pocket Aces",
+    "iconUrl": "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/icon.png",
+    "homeUrl": "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/",
+    "buttons": [
+      {
+        "label": "Mint NFT",
+        "action": "post"
+      }
+    ],
+    "postUrl": "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/api/frame",
+    "ogImage": "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/window.svg"
+  }
+}
