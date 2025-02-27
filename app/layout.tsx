@@ -2,7 +2,6 @@ import "@coinbase/onchainkit/styles.css";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
-import { NEXT_PUBLIC_URL } from "./config";
 
 const frameMetadata = {
   version: "next",
