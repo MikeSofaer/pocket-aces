@@ -8,11 +8,11 @@ const frameMetadata = {
   imageUrl:
     "https://previews.123rf.com/images/thomaspajot/thomaspajot1101/thomaspajot110100005/8778855-pair-of-aces.jpg",
   button: {
-    title: "Create Table",
+    title: "Place a Bet",
     action: {
       type: "launch_frame",
-      name: "Create Table",
-      url: "https://pocket-aces-michael-sofaers-projects.vercel.app/",
+      name: "View Table",
+      url: "http://localhost:3000/tables",
       splashImageUrl:
         "https://previews.123rf.com/images/thomaspajot/thomaspajot1101/thomaspajot110100005/8778855-pair-of-aces.jpg",
       splashBackgroundColor: "#000000",
