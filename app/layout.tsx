@@ -9,12 +9,13 @@ const frameMetadata = {
   imageUrl:
     "https://previews.123rf.com/images/thomaspajot/thomaspajot1101/thomaspajot110100005/8778855-pair-of-aces.jpg",
   button: {
-    title: "Pocket Aces",
+    title: "Create Table",
     action: {
       type: "launch_frame",
       name: "Create Table",
-      url: "https://ock-frames-template.vercel.app",
-      splashImageUrl: "https://ock-frames-template.vercel.app/splash.png",
+      url: "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/",
+      splashImageUrl:
+        "https://previews.123rf.com/images/thomaspajot/thomaspajot1101/thomaspajot110100005/8778855-pair-of-aces.jpg",
       splashBackgroundColor: "#000000",
     },
   },
