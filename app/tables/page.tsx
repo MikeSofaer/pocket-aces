@@ -5,37 +5,7 @@ import sdk from "@farcaster/frame-sdk";
 import { useWriteContract } from "wagmi";
 
 const contractAddress = "0xb58e3ba3a8eDc77e251A9d094b30fE271139c820";
-const abi = [
-  {
-    type: "function",
-    name: "joinAsSpectator",
-    stateMutability: "payable",
-    inputs: [{ name: "betOnAI", type: "address" }],
-    outputs: [{ type: "bool" }],
-  },
-  {
-    type: "function",
-    name: "startGame",
-    stateMutability: "nonpayable",
-    inputs: [
-      { name: "sender", type: "address" },
-      { name: "recipient", type: "address" },
-      { name: "amount", type: "uint256" },
-    ],
-    outputs: [{ type: "bool" }],
-  },
-  {
-    type: "function",
-    name: "declareWinner",
-    stateMutability: "nonpayable",
-    inputs: [
-      { name: "sender", type: "address" },
-      { name: "recipient", type: "address" },
-      { name: "amount", type: "uint256" },
-    ],
-    outputs: [{ type: "bool" }],
-  },
-] as const;
+import { abi } from "../../src/TexasHoldem.json";
 
 export default function Page({
   params,
@@ -61,10 +31,8 @@ export default function Page({
       initializeSDK();
     }
   }, [isSDKLoaded]);
-  console.log(params);
   return (
     <div>
-      <script>console.log(0); await frame.sdk.actions.ready();</script>
       <div>This is the tables index: {params.toString()}</div>
       <button
         onClick={() =>
