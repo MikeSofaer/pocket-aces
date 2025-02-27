@@ -4,20 +4,29 @@ import { useEffect, useState } from "react";
 import sdk from "@farcaster/frame-sdk";
 import { useWriteContract } from "wagmi";
 
+const contractAddress = "0xb58e3ba3a8eDc77e251A9d094b30fE271139c820";
 const abi = [
   {
     type: "function",
-    name: "approve",
+    name: "joinAsSpectator",
+    stateMutability: "payable",
+    inputs: [{ name: "betOnAI", type: "address" }],
+    outputs: [{ type: "bool" }],
+  },
+  {
+    type: "function",
+    name: "startGame",
     stateMutability: "nonpayable",
     inputs: [
-      { name: "spender", type: "address" },
+      { name: "sender", type: "address" },
+      { name: "recipient", type: "address" },
       { name: "amount", type: "uint256" },
     ],
     outputs: [{ type: "bool" }],
   },
   {
     type: "function",
-    name: "transferFrom",
+    name: "declareWinner",
     stateMutability: "nonpayable",
     inputs: [
       { name: "sender", type: "address" },
@@ -61,9 +70,9 @@ export default function Page({
         onClick={() =>
           writeContract({
             abi,
-            address: "0x6b175474e89094c44da98b954eedeac495271d0f",
-            functionName: "placeBet",
-            args: ["1"],
+            address: contractAddress,
+            functionName: "joinAsSpectator",
+            args: ["0xf0B88B96491f3fCE34C353A5DD9e68E6eFc6b6A8"],
           })
         }
       >
@@ -74,9 +83,9 @@ export default function Page({
         onClick={() =>
           writeContract({
             abi,
-            address: "0x6b175474e89094c44da98b954eedeac495271d0f",
-            functionName: "placeBet",
-            args: ["2"],
+            address: contractAddress,
+            functionName: "joinAsSpectator",
+            args: ["0x098F822d12d7F0D19c6c01Ff2774FF9b3fDE1e46"],
           })
         }
       >
