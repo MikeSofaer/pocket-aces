@@ -7,15 +7,15 @@
   "frame": {
     "version": "1",
     "name": "Pocket Aces",
-    "iconUrl": "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/icon.png",
-    "homeUrl": "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/",
+    "iconUrl": "https://pocket-aces-michael-sofaers-projects.vercel.app/icon.png",
+    "homeUrl": "https://pocket-aces-michael-sofaers-projects.vercel.app/",
     "buttons": [
       {
         "label": "Mint NFT",
         "action": "post"
       }
     ],
-    "postUrl": "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/api/frame",
-    "ogImage": "https://pocket-aces-ptyhndmdf-michael-sofaers-projects.vercel.app/window.svg"
+    "postUrl": "https://pocket-aces-michael-sofaers-projects.vercel.app/api/frame",
+    "ogImage": "https://pocket-aces-michael-sofaers-projects.vercel.app/window.svg"
   }
 }
