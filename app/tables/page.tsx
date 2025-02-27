@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import sdk from "@farcaster/frame-sdk";
 import { useWriteContract } from "wagmi";
+import { WalletComponents } from "../../components/WalletComponents";
 
 const contractAddress = "0xb58e3ba3a8eDc77e251A9d094b30fE271139c820";
 import { abi } from "../../src/TexasHoldem.json";
@@ -34,6 +35,12 @@ export default function Page({
   return (
     <div>
       <div>This is the tables index: {params.toString()}</div>
+      <h2 className="font-medium text-base mb-3 text-white/90">
+        Connect wallet
+      </h2>
+      <div>
+        <WalletComponents />
+      </div>
       <button
         onClick={() =>
           writeContract({
