@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   ConnectWallet,
@@ -6,33 +6,36 @@ import {
   WalletDropdown,
   WalletDropdownLink,
   WalletDropdownDisconnect,
-} from '@coinbase/onchainkit/wallet';
+} from "@coinbase/onchainkit/wallet";
 import {
   Address,
   Avatar,
   Name,
   Identity,
   EthBalance,
-} from '@coinbase/onchainkit/identity';
-import ArrowSvg from './svg/ArrowSvg';
-import ImageSvg from './svg/Image';
-import OnchainkitSvg from './svg/OnchainKit';
+} from "@coinbase/onchainkit/identity";
+import ArrowSvg from "./svg/ArrowSvg";
+import ImageSvg from "./svg/Image";
+import OnchainkitSvg from "./svg/OnchainKit";
 
 const components = [
   {
-    name: 'Transaction',
-    url: 'https://onchainkit.xyz/transaction/transaction',
+    name: "Transaction",
+    url: "https://onchainkit.xyz/transaction/transaction",
   },
-  { name: 'Swap', url: 'https://onchainkit.xyz/swap/swap' },
-  { name: 'Checkout', url: 'https://onchainkit.xyz/checkout/checkout' },
-  { name: 'Wallet', url: 'https://onchainkit.xyz/wallet/wallet' },
-  { name: 'Identity', url: 'https://onchainkit.xyz/identity/identity' },
+  { name: "Swap", url: "https://onchainkit.xyz/swap/swap" },
+  { name: "Checkout", url: "https://onchainkit.xyz/checkout/checkout" },
+  { name: "Wallet", url: "https://onchainkit.xyz/wallet/wallet" },
+  { name: "Identity", url: "https://onchainkit.xyz/identity/identity" },
 ];
 
 const templates = [
-  { name: 'NFT', url: 'https://github.com/coinbase/onchain-app-template' },
-  { name: 'Commerce', url: 'https://github.com/coinbase/onchain-commerce-template'},
-  { name: 'Fund', url: 'https://github.com/fakepixels/fund-component' },
+  { name: "NFT", url: "https://github.com/coinbase/onchain-app-template" },
+  {
+    name: "Commerce",
+    url: "https://github.com/coinbase/onchain-commerce-template",
+  },
+  { name: "Fund", url: "https://github.com/fakepixels/fund-component" },
 ];
 
 export default function App() {
@@ -80,7 +83,10 @@ export default function App() {
           </div>
           <p className="text-center mb-6">
             Get started by editing
-            <code className="p-1 ml-1 rounded dark:bg-gray-800 bg-gray-200">app/page.tsx</code>.
+            <code className="p-1 ml-1 rounded dark:bg-gray-800 bg-gray-200">
+              app/page.tsx
+            </code>
+            .
           </p>
           <div className="flex flex-col items-center">
             <div className="max-w-2xl w-full">
@@ -119,7 +125,7 @@ export default function App() {
                           rel="noopener noreferrer"
                         >
                           {template.name}
-                          <ArrowSvg/>
+                          <ArrowSvg />
                         </a>
                       </li>
                     ))}
