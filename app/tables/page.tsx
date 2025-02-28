@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import sdk from "@farcaster/frame-sdk";
-import { useWriteContract, useAccount } from "wagmi";
+import { useWriteContract, useAccount, useReadContract } from "wagmi";
 import { WalletComponents } from "../../components/WalletComponents";
 
 const contractAddress = "0xb58e3ba3a8eDc77e251A9d094b30fE271139c820";
@@ -33,6 +33,13 @@ export default function Page({
       initializeSDK();
     }
   }, [isSDKLoaded]);
+
+  const communityCards = useReadContract({
+    abi,
+    address: contractAddress,
+    functionName: "getCommunityCards",
+  });
+
   return (
     <div>
       <div>This is the tables index: {params.toString()}</div>
@@ -73,6 +80,7 @@ export default function Page({
       >
         Bet on AI 2
       </button>
+      <div>Community Cards {JSON.stringify(communityCards)}</div>
     </div>
   );
 }
