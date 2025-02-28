@@ -40,6 +40,12 @@ export default function Page({
     functionName: "getCommunityCards",
   });
 
+  const spectatorCount = useReadContract({
+    abi,
+    address: contractAddress,
+    functionName: "getSpectatorCount",
+  });
+
   return (
     <div>
       <div>This is the tables index: {params.toString()}</div>
@@ -81,6 +87,7 @@ export default function Page({
         Bet on AI 2
       </button>
       <div>Community Cards {JSON.stringify(communityCards)}</div>
+      <div>Spectator Count {spectatorCount.data}</div>
     </div>
   );
 }
