@@ -156,8 +156,9 @@ library PokerHandEvaluator {
         return counts;
     }
 
-    function findBestFiveCardHand(uint8[7] memory fullHand)
-    public pure returns (uint8[5] memory bestHand, HandRank rank) {
+function findBestFiveCardHand(uint8[7] memory fullHand)
+    public pure returns (uint8[5] memory bestHand, uint8 rank) 
+{
     Hand memory bestEvaluatedHand = Hand(HandRank.HighCard, 0);
 
     // Iterate over all 21 combinations of 5-card hands from 7 cards
@@ -190,5 +191,10 @@ library PokerHandEvaluator {
             }
         }
     }
+
+    // ✅ Convert `HandRank` enum to `uint8` before returning
+    rank = uint8(bestEvaluatedHand.rank);
+
+    return (bestHand, rank);
 }
 }
