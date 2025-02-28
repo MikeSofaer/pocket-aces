@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import sdk from "@farcaster/frame-sdk";
-import { useWriteContract } from "wagmi";
+import { useWriteContract, useAccount } from "wagmi";
 import { WalletComponents } from "../../components/WalletComponents";
 
 const contractAddress = "0xb58e3ba3a8eDc77e251A9d094b30fE271139c820";
@@ -15,6 +15,7 @@ export default function Page({
 }) {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const { writeContract } = useWriteContract();
+  const { address, isConnected } = useAccount();
 
   // Initialize Frame SDK
   useEffect(() => {
@@ -39,7 +40,13 @@ export default function Page({
         Connect wallet
       </h2>
       <div>
-        <WalletComponents />
+        <h2 className="font-2xl font-bold">Wallet</h2>
+
+        {address && (
+          <div className="my-2 text-xs">
+            Address: <pre className="inline">{address}</pre>
+          </div>
+        )}
       </div>
       <button
         onClick={() =>
