@@ -1,12 +1,13 @@
 {
   "accountAssociation": {
-    "header": "eyJmaWQiOjM3OTc4MywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDMwNTU5MDk0MjlmNjM3MDQxYjNlMjNEM2ZBMzU3Rjk4QmQ3YWI0MTgifQ",
+    "header": "eyJmaWQiOjM3OTc4MywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweEYxY0ZBNWY2MmE1NmY2ZTE0Qzc4MTNFZjg5ODVFOEI1QWI3MEY3MjMifQ",
     "payload": "eyJkb21haW4iOiJwb2NrZXQtYWNlcy1taWNoYWVsLXNvZmFlcnMtcHJvamVjdHMudmVyY2VsLmFwcCJ9",
-    "signature": "MHhjYTEyZWNmNWY1MzVlZGE5ODEyNTM3MjQ1MTQ5MDlmMzg4NDdkM2JmNDExYjU2NjE1Mjk5NmQ4OTliNzAwZGIxMTg5NTNkZGQwM2FjM2EwZmNiZGMzYTdmODNlNzBjN2E4ZTljZTc0ZWY4ODg2MTM4YzUyMjRjOWExYTE5OGE2NTFi"
+    "signature": "MHhlMjg3MTc0YzQ5ZjRhZmRmNWU2YTViMTk2YjA5MTNhZGIyY2MzZGRjMGY3YmVjYmU4MmRiMjc1NTRmODdlODJiMzA0OGU2NDkyODZjNGFjNGRiYzQxNDdmYzZjOGNjZTkwOGZhMmE2NTk2ODVjYmFkZjE3NDY4MDJjMDE3M2EzYjFi"
   },
   "frame": {
     "version": "1",
     "name": "Pocket Aces",
+    "webhookUrl": "https://pocket-aces-michael-sofaers-projects.vercel.app/api/webhook",
     "iconUrl": "https://pocket-aces-michael-sofaers-projects.vercel.app/icon.png",
     "homeUrl": "https://pocket-aces-michael-sofaers-projects.vercel.app/",
     "buttons": [
