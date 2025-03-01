@@ -14,9 +14,8 @@ import {
   Identity,
   EthBalance,
 } from "@coinbase/onchainkit/identity";
-import ArrowSvg from "./svg/ArrowSvg";
-import ImageSvg from "./svg/Image";
-import OnchainkitSvg from "./svg/OnchainKit";
+import PokerFrameSeq from "@/components/PokerFrameSeq";
+import PokerTableLayout from "@/components/PokerTableLayout";
 
 const components = [
   {
@@ -71,68 +70,17 @@ export default function App() {
         </div>
       </header>
 
-      <main className="flex-grow flex items-center justify-center">
-        <div className="max-w-4xl w-full p-4">
-          <div className="w-1/3 mx-auto mb-6">
-            <ImageSvg />
-          </div>
-          <div className="flex justify-center mb-6">
-            <a target="_blank" rel="_template" href="https://onchainkit.xyz">
-              <OnchainkitSvg className="dark:text-white text-black" />
-            </a>
-          </div>
-          <p className="text-center mb-6">
-            Can you change anything by editing
-            <code className="p-1 ml-1 rounded dark:bg-gray-800 bg-gray-200">
-              app/page.tsx
-            </code>
-            .
-          </p>
-          <div className="flex flex-col items-center">
-            <div className="max-w-2xl w-full">
-              <div className="flex flex-col md:flex-row justify-between mt-4">
-                <div className="md:w-1/2 mb-4 md:mb-0 flex flex-col items-center">
-                  <p className="font-semibold mb-2 text-center">
-                    Explore components
-                  </p>
-                  <ul className="list-disc pl-5 space-y-2 inline-block text-left">
-                    {components.map((component, index) => (
-                      <li key={index}>
-                        <a
-                          href={component.url}
-                          className="hover:underline inline-flex items-center dark:text-white text-black"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {component.name}
-                          <ArrowSvg />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="md:w-1/2 flex flex-col items-center">
-                  <p className="font-semibold mb-2 text-center">
-                    Explore templates
-                  </p>
-                  <ul className="list-disc pl-5 space-y-2 inline-block text-left">
-                    {templates.map((template, index) => (
-                      <li key={index}>
-                        <a
-                          href={template.url}
-                          className="hover:underline inline-flex items-center dark:text-white text-black"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {template.name}
-                          <ArrowSvg />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
+      <main className="flex-grow flex flex-col items-center justify-start py-16">
+        <div className="max-w-4xl w-full p-4 text-center">
+          <h1 className="text-4xl font-bold">Pocket Aces</h1>
+          <h2 className="text-lg text-gray-500">Farcaster Frame Demo</h2>
+          <div className="mt-6 flex justify-center">
+            {/* <div className="mt-6 flex justify-center w-full h-full"> */}
+            {/* Use ngrok to test a deployed frame? */}
+            {/* <FrameEmbed src="https://warpcast.com/~/developers/frames?fc_api=1" /> */}
+            <PokerTableLayout>
+              <PokerFrameSeq />
+            </PokerTableLayout>
           </div>
         </div>
       </main>
