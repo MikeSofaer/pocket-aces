@@ -1,12 +1,33 @@
 "use client";
-import { useState } from "react";
+// import { useState, useEffect } from "react";
 // import FrameEmbed from "./farcaster/FrameEmbed";
 
-// TODO make stages into their own components if / when you have time
+import { useEffect, useCallback, useState } from "react";
+import sdk from "@farcaster/frame-sdk";
+
+// Demo
 export default function PokerFrameSeq() {
   const [stage, setStage] = useState(1);
   const [selectedAI, setSelectedAI] = useState<string | null>(null);
   const [winner, setWinner] = useState("");
+  const [isSDKLoaded, setIsSDKLoaded] = useState(false);
+
+  const [context, setContext] = useState<unknown>();
+
+  useEffect(() => {
+    const load = async () => {
+      setContext(await sdk.context);
+      sdk.actions.ready();
+    };
+    if (sdk && !isSDKLoaded) {
+      setIsSDKLoaded(true);
+      load();
+    }
+  }, [isSDKLoaded]);
+
+  if (!isSDKLoaded) {
+    return <div>Loading...</div>;
+  }
 
   const handleBet = (ai: string) => {
     console.log(`Bet placed on ${ai}`);
@@ -23,6 +44,23 @@ export default function PokerFrameSeq() {
     setStage(4);
   };
 
+  // This is working on warpcast dev playground now
+  // Try adding the onClick events in app/tables/page.tsx
+  // <div className="bg-green-600 rounded-lg p-6 flex justify-center items-center w-full h-full max-w-screen-md sm:h-80 md:h-96">
+  //     <div>This is the tables index: {params.toString()}</div>
+  //     <h2 className="font-medium text-base mb-3 text-white/90">
+  //       Connect wallet
+  //     </h2>
+  //     <div>
+  //       <h2 className="font-2xl font-bold">Wallet</h2>
+
+  //       {address && (
+  //         <div className="my-2 text-xs">
+  //           Address: <pre className="inline">{address}</pre>
+  //         </div>
+  //       )}
+  //     </div>
+  // TODO make stages into their own components if / when you have time
   return (
     <div className="bg-green-600 rounded-lg p-6 flex justify-center items-center w-full h-full max-w-screen-md sm:h-80 md:h-96">
       {stage === 1 && (
@@ -58,6 +96,9 @@ export default function PokerFrameSeq() {
           <h1 className="text-3xl font-bold mb-4">
             Revealing Community Cards...
           </h1>
+          {/* need to map these next */}
+          {/* <div>Community Cards {JSON.stringify(communityCards)}</div> */}
+          {/* Should be [0, 0, 0, 0, 0] */}
           <div className="flex space-x-3 mb-4 justify-center">
             {["A♠", "A♣", "J♦", "7♠", "10♥"].map((card, index) => (
               <div

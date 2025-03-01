@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import {
   ConnectWallet,
   Wallet,
@@ -14,8 +15,14 @@ import {
   Identity,
   EthBalance,
 } from "@coinbase/onchainkit/identity";
-import PokerFrameSeq from "@/components/PokerFrameSeq";
+
 import PokerTableLayout from "@/components/PokerTableLayout";
+// No Server Side Rendering
+// const Demo = dynamic(() => import("~/components/Demo"), {
+// or is this supposed to be in app/tables/page.tsx ?
+const PokerFrameSeq = dynamic(() => import("@/components/PokerFrameSeq"), {
+  ssr: false,
+});
 
 const components = [
   {
