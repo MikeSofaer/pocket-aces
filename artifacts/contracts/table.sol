@@ -66,10 +66,10 @@ contract TexasHoldem {
         require(!gameStarted, "Game already started");
         require(players[msg.sender].addr == address(0), "Already registered as AI");
 
-        players[msg.sender] = Player(msg.sender, 100, 0, [0, 0], true, false);
+        players[msg.sender] = Player(msg.sender, 100, 0, [uint8(0), uint8(0)], true, false);
         playerAddresses.push(msg.sender);
 
-        emit JoinedGame(msg.sender, 100);
+        require(playerAddresses.length > 0, "playerAddresses not updating"); // Debugging line
     }
 
     function joinAsSpectator(address betOnAI) external payable {
@@ -233,16 +233,20 @@ contract TexasHoldem {
         gameStarted = false;
         aiPot = 0;
         spectatorPot = 0;
-        delete communityCards;
 
-        // Reset all AI players
+        // Clear community cards
+        for (uint8 i = 0; i < 5; i++) {
+            communityCards[i] = 0;
+        }
+
+        // Reset AI players
         for (uint8 i = 0; i < playerAddresses.length; i++) {
             address playerAddr = playerAddresses[i];
             delete players[playerAddr]; // ✅ Completely remove player from mapping
         }
         delete playerAddresses; // ✅ Fully clear AI players list
 
-        // Reset all spectators
+        // Reset spectators
         for (uint8 i = 0; i < spectatorAddresses.length; i++) {
             address spectator = spectatorAddresses[i];
             delete spectators[spectator]; // ✅ Completely remove spectator from mapping
@@ -267,9 +271,9 @@ contract TexasHoldem {
         return highest;
     }
 
-    function getHoleCards() external view returns (uint8[2] memory) {
-        require(players[msg.sender].addr != address(0), "AI player not found");
-        return players[msg.sender].holeCards;
+   function getHoleCards() external view returns (uint8, uint8) {
+        require(players[msg.sender].isActive, "AI player not found");
+        return (players[msg.sender].holeCards[0], players[msg.sender].holeCards[1]);
     }
 
     function getPlayerBet(address player) external view returns (uint256) {
