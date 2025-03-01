@@ -3,13 +3,15 @@
 import { useEffect, useState } from "react";
 import sdk from "@farcaster/frame-sdk";
 import { useWriteContract, useAccount, useReadContract } from "wagmi";
+import { ethers } from "ethers";
 
 // will produce [0,0,0,0,0]
 // A♠, A♠, A♠, A♠, A♠
 // const contractAddress = "0xb58e3ba3a8eDc77e251A9d094b30fE271139c820";
 // will produce [28, 16, 10, 48, 2]
 // 3♦, 4♥, J♠, 10♣, 3♠
-const contractAddress = "0x9BEEf0b0a88d419b162b0aEb1e91F17467Ea8447";
+// const contractAddress = "0x9BEEf0b0a88d419b162b0aEb1e91F17467Ea8447";
+const contractAddress = "0xbB5c8d0290ad72bf4a20b33F70729ef4Eb512FAf";
 import { abi } from "../src/TexasHoldem.json";
 import BettingScreen from "./game/BettingScreen";
 import LoadingScreen from "./game/LoadingScreen";
@@ -87,10 +89,11 @@ const PokerGame = ({ contractId }: PokerGameProps) => {
       if (ai === "AI 1") setBetAI1(true);
       if (ai === "AI 2") setBetAI2(true);
 
-      await writeContract({
+      writeContract({
         abi,
         address: contractAddress,
         functionName: "joinAsSpectator",
+        value: ethers.parseEther(".0002"),
         args: contractData.args,
       });
 
