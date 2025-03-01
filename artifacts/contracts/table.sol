@@ -299,9 +299,15 @@ contract TexasHoldem {
     }
 
     function getAllSpectatorAddresses() external view returns (address[] memory) {
-    return spectatorAddresses;
+        return spectatorAddresses;
+    }
+
+    function getAllAIPlayerAddresses() external view returns (address[] memory) {
+        return playerAddresses;
+    }
+
 }
-}
+
 
 
 
