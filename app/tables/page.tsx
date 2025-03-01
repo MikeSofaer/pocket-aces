@@ -6,7 +6,7 @@ import { useWriteContract, useAccount, useReadContract } from "wagmi";
 import { WalletComponents } from "../../components/WalletComponents";
 
 const contractAddress = "0xb58e3ba3a8eDc77e251A9d094b30fE271139c820";
-import { abi } from "../../src/TexasHoldem.json";
+import abi from "../../src/TexasHoldem.json";
 
 export default function Page({
   params,
@@ -87,7 +87,7 @@ export default function Page({
         Bet on AI 2
       </button>
       <div>Community Cards {JSON.stringify(communityCards)}</div>
-      <div>Spectator Count {spectatorCount.data}</div>
+      <div>Spectator Count {spectatorCount.data.toString()}</div>
     </div>
   );
 }
