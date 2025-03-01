@@ -4,6 +4,14 @@ interface PokerTableLayoutProps {
   children: React.ReactNode;
 }
 
+// This might not be in the correct location
+// let's just put in a placeholder,
+// Since our frame app will be rendering at mobile width,
+//   we'll give it a fixed width and center the content:
+// Farcaster demo from docs - mobile only
+//<div className="w-[300px] mx-auto py-4 px-2">
+//<h1 className="text-2xl font-bold text-center mb-4">Frames v2 Demo</h1>
+// </div>
 const PokerTableLayout: React.FC<PokerTableLayoutProps> = ({ children }) => {
   return (
     <div className="mt-6 flex justify-center w-full h-screen">

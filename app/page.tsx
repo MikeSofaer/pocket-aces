@@ -1,5 +1,7 @@
 "use client";
 
+import dynamic from "next/dynamic";
+// import { GetServerSideProps } from "next";
 import {
   ConnectWallet,
   Wallet,
@@ -14,8 +16,14 @@ import {
   Identity,
   EthBalance,
 } from "@coinbase/onchainkit/identity";
-import PokerFrameSeq from "@/components/PokerFrameSeq";
+
 import PokerTableLayout from "@/components/PokerTableLayout";
+// No Server Side Rendering
+// const Demo = dynamic(() => import("~/components/Demo"), {
+// or is this supposed to be in app/tables/page.tsx ?
+const PokerGame = dynamic(() => import("@/components/PokerGame"), {
+  ssr: false,
+});
 
 const components = [
   {
@@ -37,7 +45,7 @@ const templates = [
   { name: "Fund", url: "https://github.com/fakepixels/fund-component" },
 ];
 
-export default function App() {
+export default function App({ params }: { params: { contract_id: string } }) {
   return (
     <div className="flex flex-col min-h-screen font-sans dark:bg-background dark:text-white bg-white text-black">
       <header className="pt-4 pr-4">
@@ -79,7 +87,9 @@ export default function App() {
             {/* Use ngrok to test a deployed frame? */}
             {/* <FrameEmbed src="https://warpcast.com/~/developers/frames?fc_api=1" /> */}
             <PokerTableLayout>
-              <PokerFrameSeq />
+              {/* <PokerFrameSeq contractId={params.contract_id} /> */}
+              <PokerGame contractId={""} />
+              {/* <PokerFrameSeq /> */}
             </PokerTableLayout>
           </div>
         </div>

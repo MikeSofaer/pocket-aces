@@ -14,6 +14,10 @@ const frameMetadata = {
       type: "launch_frame",
       name: "View Table",
       url: "https://pocket-aces-michael-sofaers-projects.vercel.app/tables",
+      // add ngrok url to here to test locally with warpcast dev playground
+      // url: "https://.ngrok-free.app",
+      // will we need to add a different file for updated demo?
+      // url: "https://pocket-aces-michael-sofaers-projects.vercel.app/demo",
       splashImageUrl:
         "https://previews.123rf.com/images/thomaspajot/thomaspajot1101/thomaspajot110100005/8778855-pair-of-aces.jpg",
       splashBackgroundColor: "#000000",
