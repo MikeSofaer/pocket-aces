@@ -17,6 +17,7 @@ import {
 import ArrowSvg from "./svg/ArrowSvg";
 import ImageSvg from "./svg/Image";
 import OnchainkitSvg from "./svg/OnchainKit";
+import PokerFrame from "@/components/PokerFrame";
 
 const components = [
   {
@@ -71,8 +72,16 @@ export default function App() {
         </div>
       </header>
 
-      <main className="flex-grow flex items-center justify-center">
-        <div className="max-w-4xl w-full p-4">
+      <main className="flex-grow flex flex-col items-center justify-start py-16">
+        <div className="max-w-4xl w-full p-4 text-center">
+          <h1 className="text-4xl font-bold">Pocket Aces</h1>
+          <h2 className="text-lg text-gray-500">Farcaster Frame Demo</h2>
+          <div className="mt-6 flex justify-center">
+            {/* Use ngrok to test a deployed frame? */}
+            {/* <FrameEmbed src="https://warpcast.com/~/developers/frames?fc_api=1" /> */}
+            <PokerFrame />
+          </div>
+          {/* <div className="max-w-4xl w-full p-4"> */}
           <div className="w-1/3 mx-auto mb-6">
             <ImageSvg />
           </div>
